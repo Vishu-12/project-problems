@@ -1,0 +1,57 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(Inter-Medium.ttf);
+}
+* {
+  font-family: myFirstFont;
+  margin: 0;
+}
+.mainContainer {
+  display: flex;
+  justify-content: space-evenly;
+  background: #ffcd9e;
+}
+.leftSide {
+  flex-basis: 40%;
+  margin-top: 5%;
+}
+.rightSide {
+  flex-basis: 505;
+}
+.heading {
+  line-height: 3rem;
+}
+.description {
+  margin-top: 1rem;
+  width: 70%;
+  line-height: 1.6rem;
+  margin-bottom: 1rem;
+}
+button {
+  padding: 10px 40px;
+  background: #282828;
+  color: white;
+  border-radius: 0.2rem;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+}
+input {
+  padding: 10px 20px 10px 10px;
+  border: 2px solid black;
+  border-radius: 0.2rem;
+  width: 50%;
+}
+
+footer {
+  background: #282828;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 2rem 4rem;
+  line-height: 2rem;
+}
+
+.footerRightSide {
+  text-align: right;
+}
