@@ -1,0 +1,99 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(DeliusUnicase-Bold.ttf);
+}
+@font-face {
+  font-family: myFirstFont2;
+  src: url(DMSans_24pt-Regular.ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  font-family: myFirstFont2;
+}
+nav h1 {
+  font-family: myFirstFont;
+}
+.navBar {
+  background: #6f6af7;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  font-family: myFirstFont2;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+.hamburgerIcon {
+  width: 35px;
+  height: 4px;
+  background-color: white;
+  margin: 6px 0;
+}
+a {
+  text-decoration: none;
+  color: white;
+  font-size: larger;
+  padding-right: 1.5rem;
+}
+.search {
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  border: none;
+}
+.firstSection {
+  padding: 4rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.setImage {
+  width: 25%;
+  background-image: url("topImage.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 54vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 12px;
+}
+.texarea {
+  height: 54vh;
+  width: 50%;
+}
+textarea {
+  border-radius: 6px;
+  background: #e5d8ff;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: none;
+
+  resize: none;
+}
+.secondSection {
+  display: flex;
+  padding: 2rem 10rem;
+  justify-content: space-between;
+}
+.innerDiv {
+  padding: 2rem;
+  color: white;
+  background: #929dff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.lastSection {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 10rem;
+  background: #483eff;
+  border-radius: 1rem;
+}
+.buttons {
+  font-size: 1.4rem;
+  margin: 2rem;
+  padding: 1rem 7rem;
+  border: 3px white solid;
+  color: white;
+  border-radius: 0.6rem;
+  font-weight: 600;
+}
