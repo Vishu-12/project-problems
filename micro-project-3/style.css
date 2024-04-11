@@ -1,0 +1,63 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #3b4664;
+}
+#MainContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#result {
+  font-size: large;
+  padding: 1rem;
+  text-align: right;
+  margin-bottom: 1rem;
+  background-color: #181f32;
+  color: white;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.calNumbers {
+  padding: 1rem;
+  border: 1px solid black;
+  background: #181f32;
+}
+
+.firstLine {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+.numbers {
+  padding: 0.3rem 0;
+  width: 3rem;
+  align-items: center;
+  background: #eae3db;
+  text-align: center;
+  border-radius: 0.3rem;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.reset {
+  padding: 0.3rem 0;
+  width: 6.5rem;
+  background: #647299;
+  color: white;
+  text-align: center;
+}
+.equal {
+  padding: 0.3rem 0;
+  width: 6.5rem;
+  background: #d13f30;
+  color: white;
+  text-align: center;
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="MainContainer" id="MainContainer">
+      <div id="calcu">
+        <h3 style="color: white">Calc</h3>
+        <div>
+          <input type="number" id="result" />
+          <div class="calNumbers">
+            <div class="firstLine">
+              <input
+                type="button"
+                class="numbers"
+                onclick="dis('7')"
+                onkeydown="myFunction(event)"
+                value="7"
+              />
+              <input
+                type="button"
+                class="numbers"
+                onclick="dis('8')"
+                onkeydown="myFunction(event)"
+                value="8"
+              />
+
+              <input
+                type="button"
+                class="numbers"
+                onclick="dis('9')"
+                onkeydown="myFunction(event)"
+                value="9"
+              />
+
+              <input class="numbers" value="DEL" />
+            </div>
+            <div class="firstLine">
+              <input
+                type="button"
+                class="numbers"
+                onclick="dis('4')"
+                onkeydown="myFunction(event)"
+                value="4"
+              />
+
+              <input
+                type="button"
+                class="numbers"
+                onclick="dis('5')"
+                onkeydown="myFunction(event)"
+                value="5"
+              />
+
+              <input
+                type="button"
+                class="numbers"
+                onclick="dis('6')"
+                onkeydown="myFunction(event)"
+                value="6"
+              />
+
+              <input
+                type="button"
+                class="numbers"
+                onclick="dis('+')"
+                onkeydown="myFunction(event)"
+                value="+"
+              />
+            </div>
+            <div class="firstLine">
+              <input
+                type="button"
+                class="numbers"
+                onclick="dis('1')"
+                onkeydown="myFunction(event)"
+                value="1"
+              />
+
+              <input
+                type="button"
+                class="numbers"
+                onclick="dis('2')"
+                onkeydown="myFunction(event)"
+                value="2"
+              />
+
+              <input
+                type="button"
+                class="numbers"
+                onclick="dis('3')"
+                onkeydown="myFunction(event)"
+                value="3"
+              />
+
+              <input
+                type="button"
+                class="numbers"
+                onclick="dis('-')"
+                onkeydown="myFunction(event)"
+                value="-"
+              />
+            </div>
+            <div class="firstLine">
+              <input
+                type="button"
+                class="numbers"
+                onclick="dis('.')"
+                onkeydown="myFunction(event)"
+                value="."
+              />
+
+              <input
+                type="button"
+                class="numbers"
+                onclick="dis('0')"
+                onkeydown="myFunction(event)"
+                value="0"
+              />
+
+              <input
+                type="button"
+                class="numbers"
+                onclick="dis('/')"
+                onkeydown="myFunction(event)"
+                value="/"
+              />
+
+              <input
+                type="button"
+                class="numbers"
+                onclick="dis('*')"
+                onkeydown="myFunction(event)"
+                value="*"
+              />
+            </div>
+            <div class="buttons">
+              <input
+                type="button"
+                class="reset"
+                onclick="clr()"
+                value="RESET"
+              />
+              <input type="button" class="equal" value="=" onclick="solve()" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
