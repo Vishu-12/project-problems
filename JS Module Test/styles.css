@@ -1,0 +1,20 @@
+@font-face {
+  font-family: myFirstFont2;
+  src: url(Roboto-Bold.ttf);
+}
+
+body {
+  background: #8cc461;
+  font-family: myFIrstFont2;
+}
+.rps {
+  font-size: 2rem;
+  line-height: 0.2rem;
+}
+.hr1 {
+  transform: rotate(125deg);
+  clip-path: polygon(100% 50%, 0 0, 0 100%);
+}
+.hr2 {
+  transform: rotate(240deg);
+}

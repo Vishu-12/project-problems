@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div
+      style="
+        width: 50%;
+        margin: 2rem auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        border: 1px white solid;
+        padding: 1rem;
+        border-radius: 1rem;
+      "
+    >
+      <div style="color: white; flex-basis: 70%">
+        <p class="rps">ROCK</p>
+        <p class="rps">PAPER</p>
+        <p class="rps">SCISSORS</p>
+      </div>
+      <div
+        style="
+          display: flex;
+          justify-content: right;
+          text-align: center;
+          width: 60%;
+        "
+      >
+        <div
+          style="
+            background-color: white;
+            width: 30%;
+            padding: 0.4rem;
+            border-radius: 0.4rem;
+            margin-right: 1rem;
+          "
+        >
+          <div style="font-size: small">COMPUTER <br />SCORE</div>
+          <div style="font-size: 3rem" id="computerScore">0</div>
+        </div>
+        <div
+          style="
+            background-color: white;
+            width: 30%;
+            padding: 0.4rem;
+            border-radius: 0.4rem;
+          "
+        >
+          <div style="font-size: small">YOUR <br />SCORE</div>
+          <div style="font-size: 3rem" id="playerScore">0</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: auto;
+        "
+      >
+        <div
+          style="
+            border-radius: 50%;
+            background-color: white;
+            padding: 1rem;
+            border: #0074b6 1rem solid;
+          "
+        >
+          <img id="playerImage" src="rock.png" alt="" />
+        </div>
+        <div style="color: white; margin: 0rem 4rem">
+          <p style="font-size: 2rem; line-height: 0" id="centralText">
+            YOU WIN
+          </p>
+          <p style="font-size: 1.4rem">AGAINST PC</p>
+        </div>
+        <div
+          style="
+            border-radius: 50%;
+            background-color: white;
+            padding: 1rem;
+            border: #bd00ff 1rem solid;
+          "
+        >
+          <img id="computerImage" src="scissor.png" alt="" />
+        </div>
+      </div>
+      <div style="color: white; text-align: center">
+        <button
+          style="
+            padding: 0.4rem 1rem;
+            border: none;
+            border-radius: 0.3rem;
+            cursor: pointer;
+          "
+          onclick="playAgain()"
+        >
+          PLAY AGAIN
+        </button>
+      </div>
+    </div>
+    <div
+      id="rulesBox"
+      style="
+        bottom: 5rem;
+        position: absolute;
+        float: right;
+        width: 20%;
+        background-color: #004429;
+        padding: 0.4rem;
+        border-radius: 1rem;
+        border: white.3rem solid;
+        right: 2rem;
+      "
+    >
+      <div
+        style="
+          background-color: #ff0000;
+          position: absolute;
+          right: -1.5rem;
+          top: -1.5rem;
+          padding: 0.6rem;
+          color: white;
+          border-radius: 50%;
+          border: 0.3rem white solid;
+          cursor: pointer;
+        "
+        onclick="ruleToggle()"
+      >
+        X
+      </div>
+      <div>
+        <p style="color: white; font-size: 2.3rem; text-align: center">
+          Game Rules
+        </p>
+        <ul style="list-style-type: square; color: white">
+          <li>
+            Rock beats scissors, scissors beat paper, and paper beats rock.
+          </li>
+          <li>
+            Agree ahead of time whether you’ll count off “rock, paper, scissors,
+            shoot” or just “rock, paper, scissors.”
+          </li>
+          <li>
+            Use rock, paper, scissors to settle minor decisions or simply play
+            to pass the time
+          </li>
+          <li>
+            If both players lay down the same hand, each player lays down
+            another hand
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div style="bottom: 2rem; right: 7rem; position: absolute">
+      <button
+        style="
+          background-color: transparent;
+          border: white 0.1rem solid;
+          color: white;
+          padding: 0.3rem 0.8rem;
+          border-radius: 0.5rem;
+          cursor: pointer;
+        "
+        onclick="ruleToggle()"
+      >
+        RULES
+      </button>
+    </div>
+    <div style="bottom: 2rem; right: 2rem; position: absolute">
+      <button
+        style="
+          display: none;
+          background-color: transparent;
+          border: white 0.1rem solid;
+          color: white;
+          padding: 0.3rem 0.8rem;
+          border-radius: 0.5rem;
+          cursor: pointer;
+        "
+        onclick="celebration()"
+        id="nextButton"
+      >
+        NEXT
+      </button>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", getPageData);
+      function ruleToggle() {
+        document.getElementById("rulesBox").hidden =
+          !document.getElementById("rulesBox").hidden;
+      }
+      function playAgain() {
+        window.location.assign("game.html");
+      }
+      function celebration() {
+        window.location.assign("win.html");
+      }
+      function getPageData() {
+        var images = {
+          1: "rock.png",
+          2: "scissor.png",
+          3: "paper.png",
+        };
+        let computerScore = window.localStorage.getItem("computer") || 0;
+        computerScore = Number(computerScore);
+        let playerScore = window.localStorage.getItem("player") || 0;
+        playerScore = Number(playerScore);
+
+        const searchParams = new URLSearchParams(window.location.search);
+        document.getElementById("playerImage").src =
+          images[searchParams.get("as")];
+        // generating a random number
+        const random = Math.floor(Math.random() * 3) + 1;
+        document.getElementById("computerImage").src = images[random];
+        if (searchParams.get("as") == random) {
+          document.getElementById("centralText").innerText = "TIE UP";
+          document.getElementById("playerScore").innerText = playerScore;
+          document.getElementById("computerScore").innerText = computerScore;
+        } else if (
+          (searchParams.get("as") == "2" && random == "1") ||
+          (searchParams.get("as") == "1" && random == "3") ||
+          (searchParams.get("as") == "3" && random == "2")
+        ) {
+          document.getElementById("centralText").innerText = "YOU LOST";
+          window.localStorage.setItem("computer", Number(computerScore) + 1);
+          document.getElementById("computerScore").innerText =
+            Number(computerScore) + 1;
+          document.getElementById("playerScore").innerText = playerScore;
+        } else {
+          window.localStorage.setItem("player", Number(playerScore) + 1);
+          document.getElementById("playerScore").innerText =
+            Number(playerScore) + 1;
+          document.getElementById("computerScore").innerText = computerScore;
+        }
+        if (computerScore < playerScore) {
+          document.getElementById("nextButton").style.display = "inline";
+        }
+      }
+    </script>
+  </body>
+</html>
