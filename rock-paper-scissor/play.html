@@ -68,14 +68,29 @@
         "
       >
         <div
-          style="
-            border-radius: 50%;
-            background-color: white;
-            padding: 1rem;
-            border: #0074b6 1rem solid;
-          "
+          id="winImage3"
+          style="border-radius: 50%; border: #2e9a2563 1rem solid"
         >
-          <img id="playerImage" src="rock.png" alt="" />
+          <div
+            id="winImage2"
+            style="border-radius: 50%; border: #1da82bc9 1rem solid"
+          >
+            <div
+              id="winImage"
+              style="border-radius: 50%; border: #3b6720 1rem solid"
+            >
+              <div
+                style="
+                  border-radius: 50%;
+                  background-color: white;
+                  padding: 1rem;
+                  border: #0074b6 1rem solid;
+                "
+              >
+                <img id="playerImage" src="rock.png" alt="" />
+              </div>
+            </div>
+          </div>
         </div>
         <div style="color: white; margin: 0rem 4rem">
           <p style="font-size: 2rem; line-height: 0" id="centralText">
@@ -83,15 +98,27 @@
           </p>
           <p style="font-size: 1.4rem">AGAINST PC</p>
         </div>
-        <div
-          style="
-            border-radius: 50%;
-            background-color: white;
-            padding: 1rem;
-            border: #bd00ff 1rem solid;
-          "
-        >
-          <img id="computerImage" src="scissor.png" alt="" />
+        <div id="win1" style="border-radius: 50%; border: #2e9a2563 1rem solid">
+          <div
+            id="win2"
+            style="border-radius: 50%; border: #1da82bc9 1rem solid"
+          >
+            <div
+              id="win3"
+              style="border-radius: 50%; border: #3b6720 1rem solid"
+            >
+              <div
+                style="
+                  border-radius: 50%;
+                  background-color: white;
+                  padding: 1rem;
+                  border: #bd00ff 1rem solid;
+                "
+              >
+                <img id="computerImage" src="scissor.png" alt="" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div style="color: white; text-align: center">
@@ -226,6 +253,12 @@
           document.getElementById("centralText").innerText = "TIE UP";
           document.getElementById("playerScore").innerText = playerScore;
           document.getElementById("computerScore").innerText = computerScore;
+          document.getElementById("winImage3").style.border = "none";
+          document.getElementById("winImage2").style.border = "none";
+          document.getElementById("winImage").style.border = "none";
+          document.getElementById("win3").style.border = "none";
+          document.getElementById("win2").style.border = "none";
+          document.getElementById("win1").style.border = "none";
         } else if (
           (searchParams.get("as") == "2" && random == "1") ||
           (searchParams.get("as") == "1" && random == "3") ||
@@ -236,11 +269,18 @@
           document.getElementById("computerScore").innerText =
             Number(computerScore) + 1;
           document.getElementById("playerScore").innerText = playerScore;
+
+          document.getElementById("winImage3").style.border = "none";
+          document.getElementById("winImage2").style.border = "none";
+          document.getElementById("winImage").style.border = "none";
         } else {
           window.localStorage.setItem("player", Number(playerScore) + 1);
           document.getElementById("playerScore").innerText =
             Number(playerScore) + 1;
           document.getElementById("computerScore").innerText = computerScore;
+          document.getElementById("win3").style.border = "none";
+          document.getElementById("win2").style.border = "none";
+          document.getElementById("win1").style.border = "none";
         }
         if (computerScore < playerScore) {
           document.getElementById("nextButton").style.display = "inline";
