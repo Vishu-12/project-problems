@@ -6,14 +6,19 @@
   font-family: myFirstFont;
   margin: 0;
 }
+body {
+  height: 100vh;
+  overflow: hidden;
+}
 .mainContainer {
+  height: 70vh;
   display: flex;
   justify-content: space-evenly;
   background: #ffcd9e;
 }
 .leftSide {
   flex-basis: 40%;
-  margin-top: 5%;
+  margin-top: 10%;
 }
 .rightSide {
   flex-basis: 505;
@@ -43,6 +48,7 @@ input {
 }
 
 footer {
+  height: 30vh;
   background: #282828;
   color: white;
   display: flex;
